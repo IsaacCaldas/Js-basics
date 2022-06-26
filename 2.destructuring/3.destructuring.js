@@ -7,4 +7,5 @@ const obj = { max: 3, min: -15}
 console.log(rand(obj))
 console.log(rand({ min: -21 }))
 console.log(rand({}))
-console.log(rand())
+// error
+//console.log(rand())
