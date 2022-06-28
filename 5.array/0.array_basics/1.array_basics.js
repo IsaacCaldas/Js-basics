@@ -42,13 +42,6 @@ console.log(approveds)
 approveds.pop()
 console.log(approveds)
 
-/* splice 
-
-1_param = index in array
-2_param = total to remove from index in array
-others params = items to add to first param
-*/
-
 approveds.splice(1, 1)
 console.log(approveds)
 
