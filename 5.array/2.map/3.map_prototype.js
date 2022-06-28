@@ -1,4 +1,4 @@
-Array.prototype.proto_map = function(callback) {
+Array.prototype.proto_Map = function(callback) {
   const new_array = []
   for(let i = 0; i < this.length; i++) {
     new_array.push(callback(this[i], i, this))
@@ -14,7 +14,7 @@ const cart = [
   '{ "name": "Ruler", "price": 2.00 }'
 ]
 
-cart.proto_map(product => {
+cart.proto_Map(product => {
   let product_json = JSON.parse(product)
   let price = parseFloat(product_json.price).toFixed(2).replace('.', ',')
   console.log(`R$ ${price}`)
