@@ -1,26 +1,27 @@
-function Double(a) {
-  return 2 * a
+console.log('Normal Function')
+let compareWithThis = function(param) {
+  console.log(this === param)
 }
-let double = function (a) {
-  return 2 * a
-}
-double = (a) => {
-  return 2 * a
-}
-double = a => 2 * a
 
-console.log(double(Math.PI))
+compareWithThis(global) // node
 
-function Hello() {
-  return 'Hello World!'
-}
-let hello = function() {
-  return 'Hello World!'
-}
-hello = () => {
-  return 'Hello World!'
-}
-hello = () => 'Hello World!'
-hello = _ => 'Hello World!' // _ is param
+const obj = {}
+compareWithThis = compareWithThis.bind(obj)
 
-console.log(hello())
+compareWithThis(global)
+compareWithThis(obj)
+compareWithThis(this)
+
+console.log('------------------------')
+console.log('Arrow Function')
+// in arrow function, the this refer about the context, and don't change
+
+let compareWithThisArrow = param => console.log(this === param)
+
+compareWithThisArrow(global)
+compareWithThisArrow(module.exports) // node
+compareWithThisArrow(this) 
+
+compareWithThisArrow = compareWithThisArrow.bind(obj)
+compareWithThisArrow(obj)
+compareWithThisArrow(module.exports) 
