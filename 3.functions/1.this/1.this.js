@@ -6,6 +6,7 @@ const student = {
 }
 
 student.sayHello()
+
 const say = student.sayHello
 say()
 
